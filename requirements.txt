@@ -1,0 +1,6 @@
+requests
+pyyaml
+reportlab
+anthropic
+playwright
+apscheduler

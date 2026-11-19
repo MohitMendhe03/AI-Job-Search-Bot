@@ -1,0 +1,26 @@
+{
+  "name": "Your Full Name",
+  "email": "you@example.com",
+  "phone": "+91-90000-00000",
+  "location": "City, State",
+  "linkedin": "https://www.linkedin.com/in/your-profile",
+  "summary": "Two or three honest sentences about your background.",
+  "skills": ["Skill one", "Skill two", "Skill three"],
+  "certifications": ["Only certifications you actually hold"],
+  "education": [{"degree": "Degree", "institution": "University", "year": "2020 - 2024"}],
+  "experience": [
+    {
+      "company": "Company Name", "title": "Your Job Title", "location": "City", "dates": "Jan 2023 - Present",
+      "bullets": ["What you really did or achieved. Add real numbers only if they are true."]
+    }
+  ],
+  "projects": [{"name": "Project name", "description": "One honest line."}],
+  "answers": {
+    "notice_period": "30 days",
+    "current_ctc": "",
+    "expected_ctc": "",
+    "work_authorization": "Your work authorization",
+    "willing_to_relocate": "Yes or No",
+    "total_experience_years": "2"
+  }
+}

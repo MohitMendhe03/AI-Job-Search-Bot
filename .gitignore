@@ -1,0 +1,11 @@
+# NEVER commit secrets or personal data
+.env
+profile.json
+jobs.db
+output/
+reports/
+screenshots/
+__pycache__/
+*.pyc
+.venv/
+venv/

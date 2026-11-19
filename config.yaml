@@ -1,0 +1,63 @@
+# ============ EDIT THIS FILE TO CHANGE ANYTHING ============
+# Or override per run:  python main.py run --roles "Account Executive" --locations Mumbai Pune
+#                       python main.py run --india-wide
+
+search:
+  roles:                      # used for job-API search queries and the AI match scoring
+    - SaaS Sales
+    - Account Executive
+    - Business Development
+    - Inside Sales
+    - Sales Development Representative
+  title_keywords:             # a job title must contain at least one of these to pass
+    - sales
+    - account executive
+    - business development
+    - bdr
+    - sdr
+    - inside sales
+    - account manager
+    - customer success
+    - revenue
+  exclude_title_keywords:
+    - intern
+    - director
+    - vp
+    - head of
+    - chief
+  locations:
+    - Ahmedabad
+    - Vadodara
+    - Indore
+    - Pune
+  india_wide: false           # true = any job located anywhere in India (ignores the cities above)
+  include_remote: true        # also keep remote jobs open to India / worldwide
+  posted_within_hours: 72
+
+matching:
+  min_score_to_tailor: 65     # below this the job is skipped
+  min_score_auto_submit: 80   # only used when apply.mode = auto
+
+apply:
+  mode: review                # off = only find+tailor | review = fill form, wait for your approval | auto = submit if score high
+  max_per_day: 15
+  delay_seconds: [20, 60]     # random pause between applications
+  headless: true
+
+schedule:
+  start: "09:00"
+  end: "11:00"                # pipeline stops processing after this time
+  timezone: Asia/Kolkata
+
+llm:
+  model: claude-sonnet-5-5    # used only if ANTHROPIC_API_KEY is set
+  gemini_model: gemini-2.5-flash   # used if only GEMINI_API_KEY is set (check AI Studio for current free models)
+
+sources:
+  # Company career boards (slug = part of URL, e.g. boards.greenhouse.io/<slug>). Wrong slugs are skipped safely.
+  greenhouse: [druva]
+  lever: []
+  ashby: []
+  jooble: true                # FREE aggregator of Indian job sites - needs JOOBLE_API_KEY in .env
+  adzuna: false               # now paid - disabled
+  remotive: true              # remote jobs
